@@ -25,7 +25,7 @@ for j in range(i):
         img_raw = img.tobytes()#将图片转化为二进制格式
         print(j)
         example = tf.train.Example(features=tf.train.Features(feature={
-          'label':tf.train.Feature(int64_list=tf.train.Int64List(value=[i])),
+          'label':tf.train.Feature(int64_list=tf.train.Int64List(value=[j])),
         'img_raw':tf.train.Feature(bytes_list=tf.train.BytesList(value=[img_raw]))
         }))#example对象对label和image数据进行封装
         writer.write(example.SerializeToString())#序列化为字符串
